@@ -77,7 +77,7 @@ function FeaturedDestinations() {
             </div>
             <div className="destination-info">
               <h3>{destination.city}</h3>
-  n            <p>{destination.country}</p>
+              <p>{destination.country}</p>
               <div className="destination-price">
                 <span>From</span>
                 <strong>₹{destination.price}</strong>
