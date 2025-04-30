@@ -15,8 +15,6 @@
 
 The **BookMyJet** platform is designed to deliver a seamless and elegant booking experience. This web app allows users to:
 
-- View available flights or jets.
-- Understand key information about each aircraft.
 - Experience a smooth and responsive UI optimized for mobile and desktop.
 - Explore a frontend flow for commercial flights.
 
@@ -27,9 +25,8 @@ This is the **frontend version** of the platform; backend functionality such as 
 ## ✨ Features
 
 - 🚀 Built with Next.js for blazing-fast routing and performance
-- 📱 Fully responsive design using Tailwind CSS
+- 📱 Fully responsive design 
 - 💡 Clean, elegant user interface
-- 🔗 Jet cards with detailed flight options
 - 🔧 Scalable project structure for easy upgrades
 - 🔒 Admin panel and booking management (coming soon)
 
