@@ -1,6 +1,6 @@
 # ✈️ BookMyJet – Flight Ticket Booking Website
 
-**BookMyJet** is a modern flight ticket booking platform built using **Next.js** and styled with **Tailwind CSS**. It offers a clean, user-friendly interface that allows users to explore premium jet options and book tickets effortlessly. This project demonstrates practical usage of modern web technologies to simulate a responsive, scalable airline booking system.
+**BookMyJet** is a modern flight ticket booking platform built using **Next.js**. It offers a clean, user-friendly interface that allows users to explore premium jet options and book tickets effortlessly. This project demonstrates practical usage of modern web technologies to simulate a responsive, scalable airline booking system.
 
 
 ---
