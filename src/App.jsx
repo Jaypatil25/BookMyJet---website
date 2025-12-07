@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import "./App.css"
-
+import { getCities } from "./data/cities"
 
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
@@ -16,38 +16,7 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-  
-    const indianCities = [
-      "Mumbai",
-      "Delhi",
-      "Bangalore",
-      "Hyderabad",
-      "Chennai",
-      "Kolkata",
-      "Pune",
-      "Ahmedabad",
-      "Jaipur",
-      "Lucknow",
-      "Kochi",
-      "Goa",
-      "Varanasi",
-    ]
-
-
-    const internationalCities = [
-      "New York",
-      "London",
-      "Tokyo",
-      "Paris",
-      "Dubai",
-      "Singapore",
-      "Sydney",
-      "Hong Kong",
-      "Rome",
-    ]
-
-   
-    const allCities = [...indianCities, ...internationalCities].sort()
+    const allCities = getCities()
     setCities(allCities)
     setLoading(false)
   }, [])

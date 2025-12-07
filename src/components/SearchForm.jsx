@@ -25,7 +25,11 @@ function SearchForm({ cities, loading }) {
     setFromCity(value)
 
     if (value.length > 1 && cities.length > 0) {
-      const filtered = cities.filter((city) => city.toLowerCase().includes(value.toLowerCase())).slice(0, 5)
+      const filtered = cities.filter((city) => 
+        city.name.toLowerCase().includes(value.toLowerCase()) ||
+        city.code.toLowerCase().includes(value.toLowerCase()) ||
+        city.country.toLowerCase().includes(value.toLowerCase())
+      ).slice(0, 5)
       setFromSuggestions(filtered)
       setShowFromSuggestions(true)
     } else {
@@ -38,7 +42,11 @@ function SearchForm({ cities, loading }) {
     setToCity(value)
 
     if (value.length > 1 && cities.length > 0) {
-      const filtered = cities.filter((city) => city.toLowerCase().includes(value.toLowerCase())).slice(0, 5)
+      const filtered = cities.filter((city) => 
+        city.name.toLowerCase().includes(value.toLowerCase()) ||
+        city.code.toLowerCase().includes(value.toLowerCase()) ||
+        city.country.toLowerCase().includes(value.toLowerCase())
+      ).slice(0, 5)
       setToSuggestions(filtered)
       setShowToSuggestions(true)
     } else {
@@ -47,12 +55,12 @@ function SearchForm({ cities, loading }) {
   }
 
   const selectFromCity = (city) => {
-    setFromCity(city)
+    setFromCity(`${city.name} (${city.code})`)
     setShowFromSuggestions(false)
   }
 
   const selectToCity = (city) => {
-    setToCity(city)
+    setToCity(`${city.name} (${city.code})`)
     setShowToSuggestions(false)
   }
 
@@ -69,7 +77,7 @@ function SearchForm({ cities, loading }) {
       cabinClass,
     })
 
-    alert("Search submitted! Check console for details.")
+    alert(`✈️ Your ticket has been booked successfully!\n\nFrom: ${fromCity}\nTo: ${toCity}\nDeparture: ${departDate}\nPassengers: ${passengers}\nClass: ${cabinClass.charAt(0).toUpperCase() + cabinClass.slice(1)}\n\nThank you for choosing BookMyJet!`)
   }
 
   return (
@@ -166,7 +174,7 @@ function SearchForm({ cities, loading }) {
                   <ul className="suggestions">
                     {fromSuggestions.map((city, index) => (
                       <li key={index} onClick={() => selectFromCity(city)}>
-                        {city}
+                        {city.name} ({city.code}) - {city.country}
                       </li>
                     ))}
                   </ul>
@@ -206,7 +214,7 @@ function SearchForm({ cities, loading }) {
                   <ul className="suggestions">
                     {toSuggestions.map((city, index) => (
                       <li key={index} onClick={() => selectToCity(city)}>
-                        {city}
+                        {city.name} ({city.code}) - {city.country}
                       </li>
                     ))}
                   </ul>
